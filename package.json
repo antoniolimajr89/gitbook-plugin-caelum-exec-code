@@ -1,0 +1,22 @@
+{
+  "name": "gitbook-plugin-caelum-exec-code",
+  "version": "0.0.1",
+  "description": "Códigos executáveis nas apostilas",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "tubaina-plugin-tester"
+  },
+  "engines": {
+    "gitbook": ">=1.5.0"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "tubaina-plugin-tester": "^1.0.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
