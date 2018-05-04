@@ -18,7 +18,7 @@ module.exports = {
 					.each((index, element) => {
 						const $preTagWrapper = $(element).parent()
 						// Insert button runCode
-						const $btnCompile = $(`<button data-js="compileCode">Alo Alo W Brasil!</button>`)
+						const $btnCompile = $(`<button data-js="compileCode">Alo alo teste!</button>`)
 						$preTagWrapper.before($btnCompile)
 			
 						// Convert highlithed compiler code to pure text
@@ -37,5 +37,10 @@ module.exports = {
 
 			return Promise.resolve(page)
 		}
+	},
+	book: {
+		css: [
+			'theme/assets/anuncio.css'
+		]
 	}
 }
