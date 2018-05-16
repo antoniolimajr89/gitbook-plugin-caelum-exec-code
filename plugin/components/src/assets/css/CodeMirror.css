@@ -1,0 +1,5 @@
+.CodeMirror {
+    height: 75%;
+    flex: 1;
+    font-family: monospace !important;
+}

@@ -1,0 +1,72 @@
+<!-- Styles -->
+<!-- build:css assets/css/style.css -->
+<link rel="stylesheet" href="../src/assets/js/libs/codemirror/codemirror.min.css"> <!-- CodeMirror: Index CSS -->
+<link rel="stylesheet" href="../src/assets/css/CodeWindow.css"> <!-- CodeWindow: Index CSS -->
+<link rel="stylesheet" href="../src/assets/css/CodeMirror.css"> <!-- CodeWindow: CodeMirror Custom -->
+<link rel="stylesheet" href="../src/assets/css/execCodeBtn.css"> <!-- execCodeBtn -->
+<!-- endbuild -->
+
+<!-- Libs -->
+<!-- build:js assets/js/scripts.js -->
+<script type="text/javascript" src="../src/assets/js/libs/codemirror/codemirror.min.js"></script><!-- CodeMirror: Index -->
+<script type="text/javascript" src="../src/assets/js/libs/codemirror/modes/java-mode.js"></script><!-- CodeMirror: Modes (text/x-java) -->
+<script src="../src/assets/js/compilers/sphereEngine/SphereEngineService.js"></script> <!-- CodeWindow: Compiler -->
+<script src="../src/assets/js/CodeWindow.js"></script> <!-- CodeWindow: Index -->
+<script src="../src/assets/js/execCodeBtn.js"></script> <!-- execCodeBtn -->
+<!-- endbuild -->
+
+<!--execCodeBtn-->
+<button class="execCodeBtn">
+    Executar código
+</button>
+<!--./execCodeBtn-->
+<template><code class="lang-exec__java">public class Main {
+        public static void main(String[] args) {
+            System.out.println("Minha primeira aplicação Java!");
+        }
+    }
+</code></template>
+
+
+<!--CodeWindow-->
+<div class="CodeWindow CodeWindow--active">
+    <nav class="CodeWindow-menu">
+        <button class="CodeWindow-btnToggle CodeWindow-btn--black">Fechar</button>
+    </nav>
+    <div class="CodeWindow-block">
+        <h4 class="CodeWindow-blockTitle">Código</h4>
+        <!-- CodeMirror: Code -->
+        <form id="formCodigo" class="CodeWindow-form">
+            <textarea name="codigo" id="userEditor" >
+// Seja bem vindo a apostila interativa de Java da Caelum.
+// Sempre que encontrar um botão "Executar Código"
+// Teste e veja os resultados do trecho :)
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Hello, World!");
+
+    }
+
+}
+            </textarea>
+            <button class="CodeWindow-run">Roda</button>
+        </form>
+    </div><!--
+    --><div class="CodeWindow-block">
+        <h4 class="CodeWindow-blockTitle">Resultado</h4>            
+        <!-- CodeMirror: Result -->
+        <textarea id="compilerReturn"></textarea>
+    </div>
+</div>
+<!--./CodeWindow-->
+
+
+
+<style>
+    :not(span) {
+        font-family: Merriweather,Georgia,serif;
+    }
+</style>

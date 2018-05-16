@@ -1,6 +1,7 @@
 "use strict"
 
 const cheerio = require('cheerio')
+const codeWindowComponent = require('./helpers/CodeWindowComponent')
 
 process.env.LANGUAGE = "java"
 
@@ -18,7 +19,11 @@ module.exports = {
 					.each((index, element) => {
 						const $preTagWrapper = $(element).parent()
 						// Insert button runCode
-						const $btnCompile = $(`<button data-js="compileCode">Alo alo teste!</button>`)
+						const $btnCompile = $(`
+						<button class="execCodeBtn">
+							Executar código
+						</button>
+						`)
 						$preTagWrapper.before($btnCompile)
 			
 						// Convert highlithed compiler code to pure text
@@ -31,6 +36,9 @@ module.exports = {
 						);
 					})
 
+
+				$currentChapter.append(codeWindowComponent($))
+
 				section.content = $currentChapter.html()
 				return section
 			})
@@ -39,8 +47,12 @@ module.exports = {
 		}
 	},
 	book: {
+		assets: './plugin/components/dist',
 		css: [
-			'theme/assets/anuncio.css'
+			'assets/css/style.css',
+		],
+		js: [
+			'assets/js/scripts.js',
 		]
 	}
 }
