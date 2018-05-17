@@ -1,22 +1,5 @@
-<!-- Styles -->
-<!-- build:css assets/css/style.css -->
-<link rel="stylesheet" href="../src/assets/js/libs/codemirror/codemirror.min.css"> <!-- CodeMirror: Index CSS -->
-<link rel="stylesheet" href="../src/assets/css/CodeWindow.css"> <!-- CodeWindow: Index CSS -->
-<link rel="stylesheet" href="../src/assets/css/CodeMirror.css"> <!-- CodeWindow: CodeMirror Custom -->
-<link rel="stylesheet" href="../src/assets/css/execCodeBtn.css"> <!-- execCodeBtn -->
-<!-- endbuild -->
-
-<!-- Libs -->
-<!-- build:js assets/js/scripts.js -->
-<script type="text/javascript" src="../src/assets/js/libs/codemirror/codemirror.min.js"></script><!-- CodeMirror: Index -->
-<script type="text/javascript" src="../src/assets/js/libs/codemirror/modes/java-mode.js"></script><!-- CodeMirror: Modes (text/x-java) -->
-<script src="../src/assets/js/compilers/sphereEngine/SphereEngineService.js"></script> <!-- CodeWindow: Compiler -->
-<script src="../src/assets/js/CodeWindow.js"></script> <!-- CodeWindow: Index -->
-<script src="../src/assets/js/execCodeBtn.js"></script> <!-- execCodeBtn -->
-<!-- endbuild -->
-
 <!--execCodeBtn-->
-<button class="execCodeBtn">
+<button class="execCodeBtn exec-code-no-js">
     Executar código
 </button>
 <!--./execCodeBtn-->
@@ -29,7 +12,7 @@
 
 
 <!--CodeWindow-->
-<div class="CodeWindow CodeWindow--active">
+<div class="CodeWindow exec-code-no-js">
     <nav class="CodeWindow-menu">
         <button class="CodeWindow-btnToggle CodeWindow-btn--black">Fechar</button>
     </nav>

@@ -15,8 +15,13 @@
     font-family: sans-serif !important;
     font-size: 1rem !important;
 }
+@media(max-width: 500px) {
+    .CodeWindow {
+        height: 100vh;
+    }
+}
 .CodeWindow--active {
-    transform: translateY(0);
+    transform: translateY(0) !important;
 }
 .CodeWindow * {
     font-family: inherit !important;
@@ -56,6 +61,12 @@
 .CodeWindow-block:first-of-type {
     margin-right: 2%;
 }
+@media (max-width: 500px) {
+    .CodeWindow-block {
+        width: 100%;
+        height: 50%;
+    }
+}
 
 .CodeWindow-form {
     flex: 1;
@@ -88,3 +99,9 @@
 .CodeWindow-run:hover {
     opacity: .9;
 }
+
+.CodeWindow-run[disabled="true"] {
+    opacity: .5;
+    cursor: wait;
+}
+

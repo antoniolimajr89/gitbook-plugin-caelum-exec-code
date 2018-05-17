@@ -47,12 +47,12 @@ module.exports = {
 		}
 	},
 	book: {
-		assets: './plugin/components/dist',
+		assets: './theme',
 		css: [
-			'assets/css/style.css',
+			'assets/global.css',
 		],
 		js: [
-			'assets/js/scripts.js',
+			'components/dist/bundle.js',
 		]
 	}
 }

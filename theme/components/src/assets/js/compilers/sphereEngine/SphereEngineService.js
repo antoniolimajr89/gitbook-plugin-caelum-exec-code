@@ -1,5 +1,3 @@
-(function() {
-
 function submit(submissionData) {
     const BFF_URL = "https://unicornio-online.herokuapp.com/compiler"
     return fetch(BFF_URL, {
@@ -29,8 +27,5 @@ function SphereEngineService(language){
     }
 }
 
-window.compilers = {
-    SphereEngineService: SphereEngineService
-}
 
-})()
+export default SphereEngineService

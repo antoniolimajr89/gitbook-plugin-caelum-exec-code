@@ -1,18 +1,24 @@
-const fs = require('fs')
-const path = require('path')
+<!--execCodeBtn-->
+<button class="execCodeBtn exec-code-no-js">
+    Executar código
+</button>
+<!--./execCodeBtn-->
+<template><code class="lang-exec__java">public class Main {
+        public static void main(String[] args) {
+            System.out.println("Minha primeira aplicação Java!");
+        }
+    }
+</code></template>
 
 
-
-module.exports = function($) {
-    
-    return $(`
-<div class="CodeWindow CodeWindow--active">
+<!--CodeWindow-->
+<div class="CodeWindow exec-code-no-js">
     <nav class="CodeWindow-menu">
         <button class="CodeWindow-btnToggle CodeWindow-btn--black">Fechar</button>
     </nav>
     <div class="CodeWindow-block">
         <h4 class="CodeWindow-blockTitle">Código</h4>
-        <!-- CodeMirror: Result -->
+        <!-- CodeMirror: Code -->
         <form id="formCodigo" class="CodeWindow-form">
             <textarea name="codigo" id="userEditor" >
 // Seja bem vindo a apostila interativa de Java da Caelum.
@@ -38,6 +44,12 @@ public class Main {
         <textarea id="compilerReturn"></textarea>
     </div>
 </div>
-    `)
-    
-}
+<!--./CodeWindow-->
+
+
+
+<style>
+    :not(span) {
+        font-family: Merriweather,Georgia,serif;
+    }
+</style><script type="text/javascript" src="bundle.js"></script>
