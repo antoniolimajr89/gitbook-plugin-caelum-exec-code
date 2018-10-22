@@ -23,6 +23,7 @@ function getCodeAndInsertIntoEditor({ target: $btn }) {
     const $tpl = $btn.nextElementSibling.content.cloneNode(true)
         
     $userEditor.getDoc().setValue($tpl.querySelector('code').innerText)
+    $userEditor.refresh();
 }
 
 // progressive enhancement

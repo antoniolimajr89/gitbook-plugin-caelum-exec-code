@@ -1,13 +1,16 @@
+
+
 <!--execCodeBtn-->
 <button class="execCodeBtn exec-code-no-js">
     Executar código
 </button>
 <!--./execCodeBtn-->
-<template><code class="lang-exec__java">public class Main {
-        public static void main(String[] args) {
-            System.out.println("Minha primeira aplicação Java!");
-        }
+<template><code class="lang-exec__java">
+public class Teste {
+    public static void main(String[] args) {
+        System.out.println("Minha primeira aplicação Java!");
     }
+}
 </code></template>
 
 
@@ -35,13 +38,17 @@ public class Main {
 
 }
             </textarea>
-            <button class="CodeWindow-run">Roda</button>
+            <button class="CodeWindow-run">
+                Executar
+            </button>
         </form>
     </div><!--
     --><div class="CodeWindow-block">
         <h4 class="CodeWindow-blockTitle">Resultado</h4>            
         <!-- CodeMirror: Result -->
-        <textarea id="compilerReturn"></textarea>
+        <textarea id="compilerReturn">
+Aguardando seu código ser executado :)
+        </textarea>
     </div>
 </div>
 <!--./CodeWindow-->
@@ -53,3 +60,8 @@ public class Main {
         font-family: Merriweather,Georgia,serif;
     }
 </style>
+
+
+<div style="height: 1000px;">
+
+</div>

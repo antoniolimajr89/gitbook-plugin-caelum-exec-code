@@ -14,8 +14,8 @@ window.$userEditor = CodeMirror.fromTextArea(document.querySelector('#userEditor
 
 window.$compilerReturn = CodeMirror.fromTextArea(document.querySelector('#compilerReturn'), {
     value: 'package example;',
-    lineNumbers: true,
     matchBrackets: true,
+    lineNumbers: true,
     mode: CodeMirrorModes.get(APOSTILA)
 });
 
@@ -28,19 +28,21 @@ $formCodigo.addEventListener("submit", (event) => {
     $btnCodeWindowRun.setAttribute('disabled', 'true')
 
     const codigo = event.target.elements.codigo.value
-    const  compilerService = new CompilerService("JAVA")
+    const compilerService = new CompilerService("JAVA")
 
-    console.log('Enviando código... aguarde...')
+
     $compilerReturn.getDoc().setValue('Enviando código, aguarde...');
     compilerService
         .submit(codigo)
         .then(result => {
-            $compilerReturn.getDoc().setValue(result.submissionResult);
-            $btnCodeWindowRun.setAttribute('disabled', 'false')
+            if(!result) throw new Error()
+            if(!result.processCompilerOutput) throw new Error(result.processCompilerError)
+            $compilerReturn.getDoc().setValue(result.processCompilerOutput);
+            $btnCodeWindowRun.removeAttribute('disabled')
         })
         .catch((err) => {
-            console.log(err.message)
-            $compilerReturn.getDoc().setValue('Ops! Ocorreu algum problema durante a submissão');
-            $btnCodeWindowRun.setAttribute('disabled', 'false')
+            const message = err.message || 'Ops! tivemos algum problema com o compilador :('
+            $compilerReturn.getDoc().setValue(message);
+            $btnCodeWindowRun.removeAttribute('disabled')
         })
 })

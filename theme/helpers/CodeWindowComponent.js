@@ -19,23 +19,21 @@ module.exports = function($) {
 // Sempre que encontrar um botão "Executar Código"
 // Teste e veja os resultados do trecho :)
 
-public class Main {
-
+class Teste {
     public static void main(String[] args) {
-
-        System.out.println("Hello, World!");
-
+        System.out.println("Minha primeira aplicação Java!");
     }
-
 }
+  
             </textarea>
-            <button class="CodeWindow-run">Roda</button>
+            <button class="CodeWindow-run">Executar</button>
         </form>
     </div><!--
     --><div class="CodeWindow-block">
         <h4 class="CodeWindow-blockTitle">Resultado</h4>            
         <!-- CodeMirror: Result -->
-        <textarea id="compilerReturn"></textarea>
+        <textarea id="compilerReturn">
+        </textarea>
     </div>
 </div>
     `)
